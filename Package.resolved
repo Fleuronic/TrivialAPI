@@ -1,0 +1,87 @@
+{
+  "originHash" : "52d1ed27760868b1cc2673021d8fcf07d8e0a26ece8343b1defcae9f1914298b",
+  "pins" : [
+    {
+      "identity" : "autocodable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jordanekay/AutoCodable",
+      "state" : {
+        "branch" : "swift-syntax",
+        "revision" : "d3557dab1d4499a7f7a382fe4de52c3656c0fadd"
+      }
+    },
+    {
+      "identity" : "catena",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Catena",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d34d1fbc9e174317cbbde7dd07e87c134a5dc065"
+      }
+    },
+    {
+      "identity" : "catenary",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Catenary",
+      "state" : {
+        "branch" : "main",
+        "revision" : "c6f17d5b913c2bf242a1ca44a3eb2e26972ee460"
+      }
+    },
+    {
+      "identity" : "identity",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Identity",
+      "state" : {
+        "branch" : "master",
+        "revision" : "3c92c38d7a5f2134beaefa25c278ddda5d3fcf7a"
+      }
+    },
+    {
+      "identity" : "papyrus",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jordanekay/papyrus",
+      "state" : {
+        "branch" : "generics",
+        "revision" : "3d46eb5b90fe01d6450b2f6deef4f490c004e05d"
+      }
+    },
+    {
+      "identity" : "swift-memberwise-init-macro",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/gohanlon/swift-memberwise-init-macro",
+      "state" : {
+        "revision" : "47a2bdf45f1567e7324438f8482e362ee1c3fb44",
+        "version" : "0.5.2"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-syntax.git",
+      "state" : {
+        "revision" : "0687f71944021d616d34d922343dcef086855920",
+        "version" : "600.0.1"
+      }
+    },
+    {
+      "identity" : "trivial",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Trivial",
+      "state" : {
+        "branch" : "main",
+        "revision" : "ed694eb0d65b39c69c1860f2b1e7c0e56e49fbe8"
+      }
+    },
+    {
+      "identity" : "trivialservice",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/TrivialService",
+      "state" : {
+        "branch" : "main",
+        "revision" : "19ef8668d09d9d3df7baee127f84230c8007cbdc"
+      }
+    }
+  ],
+  "version" : 3
+}
