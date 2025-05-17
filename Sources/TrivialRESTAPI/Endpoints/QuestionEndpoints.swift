@@ -8,13 +8,15 @@
 public import Papyrus
 
 import Foundation
+import struct Trivial.Question
 
 @API @Mock @JSON(decoder: TrivialDecoder())
 public protocol QuestionEndpoints {
     @GET("")
     func getQuestions<Fields>(
-        amount: Int?,
-        type: String?,
-        category: Int?
+        type: Question.QuestionType?,
+        category: Int?,
+        difficulty: Question.Difficulty?,
+        amount: Int?
     ) async throws -> QuestionsResponse<Fields>
 }

@@ -1,8 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import struct TrivialRESTAPI.QuestionDetails
+import struct Trivial.Question
+
 import protocol TrivialService.QuestionSpec
-import protocol Catenary.API
 import protocol Catena.Scoped
 
 extension API: QuestionSpec {
@@ -10,12 +10,13 @@ extension API: QuestionSpec {
 	public typealias QuestionFetchFields = QuestionFetchSpecifiedFields
 	#endif
 
-	public func fetchQuestions(of type: String? = nil, in category: Int? = nil, count: Int? = nil) async -> Results<QuestionFetchSpecifiedFields> {
+    public func fetchQuestions(of type: Question.QuestionType? = nil, in category: Int? = nil, with difficulty: Question.Difficulty? = nil, count: Int? = nil) async -> Results<QuestionFetchSpecifiedFields> {
 		await result {
 			try await questionEndpoints.getQuestions(
-				amount: count,
 				type: type,
-				category: category
+				category: category,
+                difficulty: difficulty,
+                amount: count
 			).results
 		}
 	}
