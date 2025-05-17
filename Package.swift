@@ -22,7 +22,7 @@ let package = Package(
         .package(url: "https://github.com/Fleuronic/TrivialService", branch: "main"),
 		.package(url: "https://github.com/Fleuronic/Catenary", branch: "main"),
 		.package(url: "https://github.com/jordanekay/AutoCodable", branch: "swift-syntax"),
-		.package(url: "https://github.com/jordanekay/papyrus", branch: "generics")
+		.package(url: "https://github.com/jordanekay/papyrus", branch: "main")
 	],
 	targets: [
 		.target(
