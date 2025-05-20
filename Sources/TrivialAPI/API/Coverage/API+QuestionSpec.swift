@@ -16,8 +16,13 @@ extension API: QuestionSpec {
 				type: type,
 				category: category,
                 difficulty: difficulty,
-                amount: count
+				amount: count ?? .defaultCount
 			).results
 		}
 	}
+}
+
+// MARK: -
+private extension Int {
+	static let defaultCount = 50
 }

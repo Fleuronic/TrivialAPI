@@ -17,6 +17,6 @@ public protocol QuestionEndpoints {
         type: Question.QuestionType?,
         category: Int?,
         difficulty: Question.Difficulty?,
-        amount: Int?
+        amount: Int
     ) async throws -> QuestionsResponse<Fields>
 }
