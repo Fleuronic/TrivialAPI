@@ -4,7 +4,7 @@ import struct Trivial.Question
 import protocol Catena.Scoped
 import protocol TrivialService.QuestionSpec
 
-extension GraphQLAPI: QuestionSpec {
+extension API: QuestionSpec {
 	#if swift(<6.0)
 	public typealias QuestionFetchFields = QuestionSpecifiedFields
 	#endif

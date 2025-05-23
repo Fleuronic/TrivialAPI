@@ -12,21 +12,21 @@ import protocol Catenary.API
 import protocol Catenary.Fields
 import protocol TrivialService.QuestionFields
 
-public struct GraphQLAPI<
-	Endpoint: TrivialAPI.Endpoint,
+public struct API<
+	Endpoint: GraphQLAPI.Endpoint,
 	QuestionSpecifiedFields: QuestionFields & Fields & ModelProjection
 >: @unchecked Sendable {
 	public let endpoint: Endpoint
 }
 
 // MARK: -
-public extension GraphQLAPI {
-    func specifyingQuestionFields<Fields>(_: Fields.Type) -> GraphQLAPI<Endpoint, Fields> {
+public extension API {
+    func specifyingQuestionFields<Fields>(_: Fields.Type) -> API<Endpoint, Fields> {
         .init(endpoint: endpoint)
     }
 }
 
-public extension GraphQLAPI where Endpoint == EndpointAPI {
+public extension API where Endpoint == EndpointAPI {
 	init(apiKey: String) {
 		let url = "https://oratory.hasura.app/v1/graphql"
 		let provider = Provider(baseURL: url).modifyRequests { request in
@@ -44,7 +44,7 @@ public extension GraphQLAPI where Endpoint == EndpointAPI {
 //}
 
 // MARK: -
-extension GraphQLAPI: API {
+extension API: Catenary.API {
 	public typealias APIError = Request.Error
 }
 

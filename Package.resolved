@@ -1,5 +1,5 @@
 {
-  "originHash" : "e7a6b99f0852d59a32f3d33c5d7983362313dfa4fb2f8ead7bd538562faf6990",
+  "originHash" : "af7388035697bde2ba5674b7479210d0816f5a462e9dd6871593a5a4a0b19fdd",
   "pins" : [
     {
       "identity" : "autocodable",
@@ -44,6 +44,15 @@
       "state" : {
         "branch" : "main",
         "revision" : "ff604d6cca47a31a3e27588f6c5c155664175cb2"
+      }
+    },
+    {
+      "identity" : "schemata",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jordanekay/Schemata",
+      "state" : {
+        "branch" : "master",
+        "revision" : "d50bff691be79b0334e17b394de7dc13528d3944"
       }
     },
     {

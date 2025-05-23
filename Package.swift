@@ -12,11 +12,15 @@ let package = Package(
 	products: [
 		.library(
 			name: "TrivialAPI",
-			targets: ["TrivialAPI"]
+			targets: [
+				"RESTAPI",
+				"GraphQLAPI",
+				"Serialization"
+			]
 		),
 	],
 	dependencies: [
-        .package(url: "https://github.com/Fleuronic/TrivialService", branch: "main"),
+		.package(url: "https://github.com/Fleuronic/TrivialService", branch: "main"),
 		.package(url: "https://github.com/Fleuronic/Catenary", branch: "main"),
 		.package(url: "https://github.com/jordanekay/Schemata", branch: "master"),
 		.package(url: "https://github.com/jordanekay/AutoCodable", branch: "swift-syntax"),
@@ -24,19 +28,33 @@ let package = Package(
 	],
 	targets: [
 		.target(
-			name: "TrivialAPI",
+			name: "RESTAPI",
 			dependencies: [
+				"Serialization",
+				"Catenary",
+				.product(name: "Papyrus", package: "papyrus")
+			]
+		),
+		.target(
+			name: "GraphQLAPI",
+			dependencies: [
+				"Serialization",
 				"Catenary",
 				"Schemata",
-                "AutoCodable",
-				"TrivialService",
 				.product(name: "Papyrus", package: "papyrus")
+			]
+		),
+		.target(
+			name: "Serialization",
+			dependencies: [
+				"TrivialService",
+				"AutoCodable"
 			]
 		)
 	],
 	swiftLanguageModes: [.v6]
 )
-		
+
 for target in package.targets {
 	target.swiftSettings = [
 		.enableExperimentalFeature("StrictConcurrency")
