@@ -11,11 +11,11 @@ import struct Trivial.Question
 @AutoDecodable(accessControl: .public)
 extension Question: Swift.Decodable {
     public enum CodingKeys: String, CodingKey {
-        case questionType = "type"
-        case category
-        case difficulty
-        case prompt = "question"
-        case correctAnswer
-        case incorrectAnswers
+//        case questionType = "type"
+//        case category
+//        case difficulty
+        case prompt// = "question"
+//        case correctAnswer
+//        case incorrectAnswers
     }
 }

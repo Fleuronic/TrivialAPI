@@ -12,15 +12,13 @@ let package = Package(
 	products: [
 		.library(
 			name: "TrivialAPI",
-			targets: [
-				"TrivialAPI",
-				"TrivialRESTAPI"
-			]
+			targets: ["TrivialAPI"]
 		),
 	],
 	dependencies: [
         .package(url: "https://github.com/Fleuronic/TrivialService", branch: "main"),
 		.package(url: "https://github.com/Fleuronic/Catenary", branch: "main"),
+		.package(url: "https://github.com/jordanekay/Schemata", branch: "master"),
 		.package(url: "https://github.com/jordanekay/AutoCodable", branch: "swift-syntax"),
 		.package(url: "https://github.com/jordanekay/papyrus", branch: "main")
 	],
@@ -29,12 +27,7 @@ let package = Package(
 			name: "TrivialAPI",
 			dependencies: [
 				"Catenary",
-				"TrivialRESTAPI"
-			]
-		),
-		.target(
-			name: "TrivialRESTAPI",
-			dependencies: [
+				"Schemata",
                 "AutoCodable",
 				"TrivialService",
 				.product(name: "Papyrus", package: "papyrus")
