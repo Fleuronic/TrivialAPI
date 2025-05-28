@@ -5,17 +5,16 @@
 //  Created by Kay, Jordan (He/Him/His) on 3/18/25.
 //
 
-import AutoCodable
 import struct Trivial.Question
 
-@AutoDecodable(accessControl: .public)
 extension Question: Swift.Decodable {
-    public enum CodingKeys: String, CodingKey {
-//        case questionType = "type"
-//        case category
-//        case difficulty
-        case prompt// = "question"
-//        case correctAnswer
-//        case incorrectAnswers
-    }
+	// MARK: Decodable
+	public init(from decoder: any Decoder) throws {
+		let container = try decoder.container(keyedBy: CodingKeys.self)
+		try self.init(
+			prompt: container.decode(for: .prompt),
+			questionType: container.decode(for: .questionType),
+			difficulty: container.decode(for: .difficulty)
+		)
+	}
 }

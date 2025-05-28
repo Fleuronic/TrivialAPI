@@ -11,7 +11,7 @@ extension API: QuestionSpec {
 
     public func fetchQuestions(of type: Question.QuestionType? = nil, in category: Int? = nil, with difficulty: Question.Difficulty? = nil, count: Int? = nil) async -> Results<QuestionSpecifiedFields> {
 		await result {
-			let query = Query<QuestionSpecifiedFields>()
+            let query = Query<QuestionSpecifiedFields>(schema: schema)
 			return try await endpoint.run(query).fields
 		}
 	}

@@ -5,14 +5,22 @@
 //  Created by Kay, Jordan (He/Him/His) on 5/2/25.
 //
 
-import AutoCodable
+import TrivialService
 import struct Trivial.Question
 
-@AutoEncodable(accessControl: .public, container: .singleValueForEnum)
-@AutoDecodable(accessControl: .public, container: .singleValueForEnum)
-extension Question.QuestionType: Codable {
-    public enum CodingKeys: String, CodingKey {
-        case multipleChoice = "multiple"
-        case trueFalse = "boolean"
-    }
+extension Question.QuestionType: Swift.Decodable {
+	// MARK: Decodable
+	public init(from decoder: any Decoder) throws {
+		let container = try decoder.singleValueContainer()
+		self = try .decoded(container.decode())
+	}
+}
+
+// MARK: -
+extension Question.QuestionType: Swift.Encodable {
+	// MARK: Encodable
+	public func encode(to encoder: any Encoder) throws {
+		var container = encoder.singleValueContainer()
+		try container.encode(encoded)
+	}
 }

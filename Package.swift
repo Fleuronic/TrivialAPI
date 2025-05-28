@@ -22,7 +22,6 @@ let package = Package(
 	dependencies: [
 		.package(url: "https://github.com/Fleuronic/TrivialService", branch: "main"),
 		.package(url: "https://github.com/Fleuronic/Catenary", branch: "main"),
-		.package(url: "https://github.com/jordanekay/Schemata", branch: "master"),
 		.package(url: "https://github.com/jordanekay/AutoCodable", branch: "swift-syntax"),
 		.package(url: "https://github.com/jordanekay/papyrus", branch: "main")
 	],
@@ -40,7 +39,6 @@ let package = Package(
 			dependencies: [
 				"Serialization",
 				"Catenary",
-				"Schemata",
 				.product(name: "Papyrus", package: "papyrus")
 			]
 		),

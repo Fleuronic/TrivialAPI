@@ -2,9 +2,8 @@
 
 import Papyrus
 import Foundation
-import Serialization
 
-public struct APIError: Swift.Error, Equatable, Decodable {
+public struct APIError: Error, Equatable, Decodable {
 	public let responseCode: Int
 }
 

@@ -17,6 +17,9 @@ public extension QuestionDetails {
 	}
 }
 
+// TODO:
+// extension QuestionDetails: Details {
+
 // MARK: -
 extension QuestionDetails: Fields {
 	// MARK: Decodable
