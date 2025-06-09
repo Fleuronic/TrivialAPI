@@ -1,15 +1,6 @@
 {
-  "originHash" : "af7388035697bde2ba5674b7479210d0816f5a462e9dd6871593a5a4a0b19fdd",
+  "originHash" : "a75ba7bcf9542ae7eccf7b33c0199c0af0303bea7e6fc2b29cc3c835759dcd4c",
   "pins" : [
-    {
-      "identity" : "autocodable",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/jordanekay/AutoCodable",
-      "state" : {
-        "branch" : "swift-syntax",
-        "revision" : "d3557dab1d4499a7f7a382fe4de52c3656c0fadd"
-      }
-    },
     {
       "identity" : "catena",
       "kind" : "remoteSourceControl",
@@ -44,15 +35,6 @@
       "state" : {
         "branch" : "main",
         "revision" : "ff604d6cca47a31a3e27588f6c5c155664175cb2"
-      }
-    },
-    {
-      "identity" : "schemata",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/jordanekay/Schemata",
-      "state" : {
-        "branch" : "master",
-        "revision" : "d50bff691be79b0334e17b394de7dc13528d3944"
       }
     },
     {
