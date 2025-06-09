@@ -7,7 +7,7 @@
       "location" : "https://github.com/Fleuronic/Catena",
       "state" : {
         "branch" : "main",
-        "revision" : "4580b1b3d70f9108bd36da0adbc15e4697f94c8a"
+        "revision" : "53198be3fe65eee910bca486054f55dd851c52c2"
       }
     },
     {
@@ -16,7 +16,7 @@
       "location" : "https://github.com/Fleuronic/Catenary",
       "state" : {
         "branch" : "main",
-        "revision" : "c6f17d5b913c2bf242a1ca44a3eb2e26972ee460"
+        "revision" : "319bb6e7cb8baafa20de7d9077ca7d4155286211"
       }
     },
     {
@@ -35,6 +35,24 @@
       "state" : {
         "branch" : "main",
         "revision" : "ff604d6cca47a31a3e27588f6c5c155664175cb2"
+      }
+    },
+    {
+      "identity" : "schemata",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jordanekay/Schemata",
+      "state" : {
+        "branch" : "master",
+        "revision" : "b8722d45a75a755f17907ba6d3765c23e5e46a7a"
+      }
+    },
+    {
+      "identity" : "sociableweaver",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/NicholasBellucci/SociableWeaver.git",
+      "state" : {
+        "revision" : "dd8368fcf1f8fef5d672ea64775dc6f7b02d7a92",
+        "version" : "0.1.12"
       }
     },
     {
@@ -61,7 +79,7 @@
       "location" : "https://github.com/Fleuronic/Trivial",
       "state" : {
         "branch" : "main",
-        "revision" : "d2296497806df57a09abfa181e026898ec8089b1"
+        "revision" : "c3fd3443694171ec247f41b18f5db8717059fe1d"
       }
     },
     {
@@ -70,7 +88,7 @@
       "location" : "https://github.com/Fleuronic/TrivialService",
       "state" : {
         "branch" : "main",
-        "revision" : "4565e6f4154707e0a1503cccea5cbbeeccef537b"
+        "revision" : "71b892fee72b3cd1370a70aa41819fea5b472f83"
       }
     }
   ],
