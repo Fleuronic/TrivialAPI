@@ -16,7 +16,7 @@ extension API: QuestionSpec {
 		await result {
 			try await endpoint.run(
 				Query<Self, _>(
-					count.map(Limit.init),
+					Limit(count),
 					Where<Self>(\Question.Identified.category.id, Equals(categoryID)),
 					Where<Self>(\Question.Identified.value.difficulty, Equals(difficulty))
 				)
