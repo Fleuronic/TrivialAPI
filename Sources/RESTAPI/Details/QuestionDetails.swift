@@ -6,6 +6,7 @@ import struct Trivial.Category
 import protocol TrivialService.QuestionFields
 import protocol Catena.Valued
 import protocol Catenary.Fields
+import protocol Catenary.Details
 
 @dynamicMemberLookup
 public struct QuestionDetails: QuestionFields {
@@ -22,9 +23,6 @@ public extension QuestionDetails {
 		question[keyPath: keyPath]
 	}
 }
-
-// TODO:
-// extension QuestionDetails: Details {
 
 // MARK: -
 extension QuestionDetails: Fields {
