@@ -21,4 +21,3 @@ public protocol QuestionEndpoints {
         amount: Int
     ) async throws -> QuestionsResponse<Fields>
 }
-
