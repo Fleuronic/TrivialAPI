@@ -54,5 +54,4 @@ for target in package.targets {
 	target.swiftSettings = [
 		.enableExperimentalFeature("StrictConcurrency")
 	]
-
 }
