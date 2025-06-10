@@ -8,7 +8,9 @@ import protocol Catenary.Clause
 struct Objects {
 	let body: [ArgumentList]
 
-	init(_ values: [some Input]) {
+	init?(_ values: [some Input]?) {
+		guard let values else { return nil }
+		
 		body = values.map(\.argumentList)
 	}
 }

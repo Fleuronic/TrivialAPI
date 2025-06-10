@@ -9,7 +9,9 @@ import protocol Catenary.Schematic
 struct Object<Schematic: Catenary.Schematic> {
 	let body: ArgumentList
 
-	init(_ value: some Input<Schematic>) {
+	init?(_ value: (some Input<Schematic>)?) {
+		guard let value else { return nil }
+		
 		body = value.argumentList
 	}
 }

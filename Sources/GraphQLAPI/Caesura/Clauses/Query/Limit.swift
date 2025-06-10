@@ -6,7 +6,9 @@ import protocol Catenary.Clause
 struct Limit {
 	let body: Int
 
-	init(_ count: Int) {
+	init?(_ count: Int?) {
+		guard let count else { return nil }
+		
 		body = count
 	}
 }
