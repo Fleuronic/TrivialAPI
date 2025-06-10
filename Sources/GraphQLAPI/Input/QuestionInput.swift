@@ -1,35 +1,33 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import MemberwiseInit
-import SociableWeaver
 import struct Trivial.Question
 import struct Trivial.Category
 import struct TrivialService.IdentifiedQuestion
 import struct Catenary.ArgumentList
-import struct Catena.IDFields
 import protocol Catenary.Input
+import protocol Catenary.Schematic
 
-//@_UncheckedMemberwiseInit(.public)
-//public struct QuestionInput {
-//	public let value: Model.Value
-//
-//	let categoryID: Category.ID
-//}
-//
-//// MARK: -
-//extension QuestionInput: Input {
-//	// MARK: Fields
-//	public typealias Model = Question.Identified
-//
-//	// MARK: Input
-//	public var argumentList: ArgumentList {
-//		.init(
-//			[
-//				Model.Path.prompt.rawValue: value.prompt,
-//				Model.Path.questionType.rawValue: value.questionType,
-//				Model.Path.difficulty.rawValue: value.difficulty,
-//				"category_id": categoryID
-//			]
-//		)
-//	}
-//}
+@_UncheckedMemberwiseInit(.public)
+public struct QuestionInput<Schematic: Catenary.Schematic> {
+	public let value: Model.Value
+
+	private let categoryID: Category.ID
+}
+
+// MARK: -
+extension QuestionInput: Input {
+	// MARK: Fields
+	public typealias Model = Question.Identified
+
+	// MARK: Input
+	public var argumentList: ArgumentList {
+		.init(
+			schema: Schematic.schema,
+			(\Model.value.prompt, value.prompt),
+			(\Model.value.questionType, value.questionType),
+			(\Model.value.difficulty, value.difficulty),
+			(\Model.category.id, categoryID)
+		)
+	}
+}

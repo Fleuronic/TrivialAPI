@@ -1,14 +1,10 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import MemberwiseInit
-import SociableWeaver
 import struct Trivial.Answer
-import struct Trivial.Category
 import struct Trivial.Question
 import struct TrivialService.IdentifiedAnswer
-import struct Catenary.Schema
 import struct Catenary.ArgumentList
-import struct Catena.IDFields
 import protocol Catenary.Input
 import protocol Catenary.Schematic
 
