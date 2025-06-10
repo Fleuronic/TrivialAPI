@@ -10,7 +10,7 @@ import struct Catena.IDFields
 import protocol Catenary.Fields
 
 extension IDFields: Catenary.Fields, Swift.Decodable where Model.ID: Decodable {
-	// MARK: Fields
+	// MARK: Fields
 	public static func decoded(from decoder: any Decoder) throws -> Self {
 		let container = try decoder.container(keyedBy: CodingKeys.self)
 		return try self.init(id: container.decode(for: .id))
