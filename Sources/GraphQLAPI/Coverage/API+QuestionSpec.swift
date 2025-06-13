@@ -2,14 +2,12 @@
 
 import struct Trivial.Question
 import struct Trivial.Category
-import struct Trivial.Answer
 import protocol Catena.Scoped
 import protocol TrivialService.QuestionSpec
 
 extension API: QuestionSpec {
 	#if swift(<6.0)
 	public typealias QuestionListFields = QuestionSpecifiedFields
-	public typealias QuestionFetchFields = QuestionSpecifiedFields
 	#endif
 
     public func listQuestions(of type: Question.QuestionType? = nil, inCategoryWith categoryID: Category.ID? = nil, with difficulty: Question.Difficulty? = nil, count: Int? = nil) async -> Results<QuestionSpecifiedFields> {
@@ -17,21 +15,10 @@ extension API: QuestionSpec {
 			try await endpoint.run(
 				Query<Self, _>(
 					Limit(count),
-					Where<Self>(\Question.Identified.category.id, Equals(categoryID)),
-					Where<Self>(\Question.Identified.value.difficulty, Equals(difficulty))
+					Where(\.category.id, Equals(categoryID)),
+					Where(\.value.difficulty, Equals(difficulty))
 				)
 			).fields
-		}
-	}
-
-	public func fetchRandomQuestion(of type: Question.QuestionType? = nil, inCategoryWith categoryID: Category.ID? = nil, with difficulty: Question.Difficulty? = nil) async -> SingleResult<QuestionSpecifiedFields> {
-		await result {
-			try await endpoint.run(
-				Query<Self, _>(
-					Where<Self>(\Question.Identified.category.id, Equals(categoryID)),
-					Where<Self>(\Question.Identified.value.difficulty, Equals(difficulty))
-				)
-			).fields.randomElement()!
 		}
 	}
 }

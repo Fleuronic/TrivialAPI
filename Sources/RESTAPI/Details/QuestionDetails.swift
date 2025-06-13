@@ -4,7 +4,6 @@ import struct Trivial.Question
 import struct Trivial.Answer
 import struct Trivial.Category
 import protocol TrivialService.QuestionFields
-import protocol Catena.Valued
 import protocol Catenary.Fields
 import protocol Catenary.Details
 

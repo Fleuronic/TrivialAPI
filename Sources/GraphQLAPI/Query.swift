@@ -18,20 +18,104 @@ public struct Query<
 	let argumentList: ArgumentList?
 	let count: Int?
 
-	init<each Clause: Catenary.Clause> (
+//	init<each Clause: Catenary.Clause> (
+//		name: ((String) -> String)? = nil,
+//		fieldsName: String? = nil,
+//		count: Int? = nil,
+//		_ clause: repeat (each Clause)?
+//	)  {
+//		self.name = name
+//		self.fieldsName = fieldsName
+//		self.count = count
+//
+//		var argumentList = ArgumentList()
+//		for clause in repeat each clause {
+//			clause.map { argumentList.append($0) }
+//		}
+//
+//		self.argumentList = argumentList
+//	}
+
+	init(
+		name: ((String) -> String)? = nil,
+		fieldsName: String? = nil,
+		count: Int? = nil
+	)  {
+		self.name = name
+		self.fieldsName = fieldsName
+		self.count = count
+		self.argumentList = .init()
+	}
+
+	init<
+		Clause1: Catenary.Clause
+	> (
 		name: ((String) -> String)? = nil,
 		fieldsName: String? = nil,
 		count: Int? = nil,
-		_ clause: repeat (each Clause)?
-	) {
+		_ clause1: Clause1?
+	)  {
 		self.name = name
 		self.fieldsName = fieldsName
 		self.count = count
 
 		var argumentList = ArgumentList()
-		for clause in repeat each clause {
-			clause.map { argumentList.append($0) }
-		}
+		clause1.map { argumentList.append($0) }
+
+		self.argumentList = argumentList
+	}
+
+	init<
+		Clause1: Catenary.Clause,
+		Clause2: Catenary.Clause
+	> (
+		name: ((String) -> String)? = nil,
+		fieldsName: String? = nil,
+		count: Int? = nil,
+		_ clause1: Clause1?,
+		_ clause2: Clause2?
+	) where
+		Clause1.Model == Fields.Model,
+		Clause2.Model == Fields.Model,
+		Clause1.Schematic == Schematic,
+		Clause2.Schematic == Schematic {
+		self.name = name
+		self.fieldsName = fieldsName
+		self.count = count
+
+		var argumentList = ArgumentList()
+		clause1.map { argumentList.append($0) }
+		clause2.map { argumentList.append($0) }
+
+		self.argumentList = argumentList
+	}
+
+	init<
+		Clause1: Catenary.Clause,
+		Clause2: Catenary.Clause,
+		Clause3: Catenary.Clause
+	> (
+		name: ((String) -> String)? = nil,
+		fieldsName: String? = nil,
+		count: Int? = nil,
+		_ clause1: Clause1?,
+		_ clause2: Clause2?,
+		_ clause3: Clause3?
+	) where
+		Clause1.Model == Fields.Model,
+		Clause2.Model == Fields.Model,
+		Clause3.Model == Fields.Model,
+		Clause1.Schematic == Schematic,
+		Clause2.Schematic == Schematic,
+		Clause3.Schematic == Schematic {
+		self.name = name
+		self.fieldsName = fieldsName
+		self.count = count
+
+		var argumentList = ArgumentList()
+		clause1.map { argumentList.append($0) }
+		clause2.map { argumentList.append($0) }
+		clause3.map { argumentList.append($0) }
 
 		self.argumentList = argumentList
 	}

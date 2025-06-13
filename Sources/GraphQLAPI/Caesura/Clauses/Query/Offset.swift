@@ -1,9 +1,13 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import Foundation
+import Schemata
 import protocol Catenary.Clause
+import protocol Catenary.Schematic
 
-struct Offset {
+struct Offset<
+	Model: Schemata.Model,
+	Schematic: Catenary.Schematic
+> {
 	let body: Int
 
 	init?(_ value: Int?) {

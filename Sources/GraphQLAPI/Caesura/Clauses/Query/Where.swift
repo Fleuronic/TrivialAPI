@@ -7,12 +7,15 @@ import struct Catenary.Schema
 import protocol Catenary.Clause
 import protocol Catenary.Schematic
 
-struct Where<Schematic: Catenary.Schematic> {
+struct Where<
+	Model: Schemata.Model,
+	Schematic: Catenary.Schematic
+> {
 	let body: ArgumentList
 
-	init?<Model: Schemata.Model, Body>(
+	init?<Body>(
 		_ keyPath: KeyPath<Model, Body>,
-		_ condition: (some Clause<Body>)?
+		_ condition: (some Clause<Body, Model, Schematic>)?
 	) {
 		guard let condition else { return nil }
 

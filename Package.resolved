@@ -1,5 +1,5 @@
 {
-  "originHash" : "a75ba7bcf9542ae7eccf7b33c0199c0af0303bea7e6fc2b29cc3c835759dcd4c",
+  "originHash" : "a31ed9a8e1103d2c46f085f28fd3303be16c655e7c5f31afa9e235adbe4e6d35",
   "pins" : [
     {
       "identity" : "catena",
@@ -7,7 +7,7 @@
       "location" : "https://github.com/Fleuronic/Catena",
       "state" : {
         "branch" : "main",
-        "revision" : "53198be3fe65eee910bca486054f55dd851c52c2"
+        "revision" : "663d2e351e8d8ffdd0fc566c79cc46ad5d2db502"
       }
     },
     {
@@ -16,7 +16,7 @@
       "location" : "https://github.com/Fleuronic/Catenary",
       "state" : {
         "branch" : "main",
-        "revision" : "319bb6e7cb8baafa20de7d9077ca7d4155286211"
+        "revision" : "d3ece2a4f2418a27ce7c895a686de90b94469248"
       }
     },
     {
@@ -79,16 +79,7 @@
       "location" : "https://github.com/Fleuronic/Trivial",
       "state" : {
         "branch" : "main",
-        "revision" : "c3fd3443694171ec247f41b18f5db8717059fe1d"
-      }
-    },
-    {
-      "identity" : "trivialservice",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Fleuronic/TrivialService",
-      "state" : {
-        "branch" : "main",
-        "revision" : "71b892fee72b3cd1370a70aa41819fea5b472f83"
+        "revision" : "043cd998fbbb7b5c140f9f45b9c035a9964ad3d9"
       }
     }
   ],

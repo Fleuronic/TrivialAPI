@@ -12,6 +12,7 @@ import struct Trivial.Question
 import struct Trivial.Answer
 import struct Trivial.Category
 import struct Catenary.Schema
+import protocol Catena.Fields
 import protocol Catenary.API
 import protocol Catenary.Fields
 import protocol Catenary.Schematic
@@ -20,8 +21,8 @@ import protocol TrivialService.CategoryFields
 
 public struct API<
 	Endpoint: GraphQLAPI.Endpoint,
-	QuestionSpecifiedFields: QuestionFields & Fields & ModelProjection,
-	CategorySpecifiedFields: CategoryFields & Fields & ModelProjection
+	QuestionSpecifiedFields: QuestionFields & Catenary.Fields<Question.Identified> & ModelProjection,
+	CategorySpecifiedFields: CategoryFields & Catenary.Fields<Category.Identified> & ModelProjection
 >: @unchecked Sendable {
 	public let endpoint: Endpoint
 }

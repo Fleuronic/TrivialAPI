@@ -2,10 +2,15 @@
 
 import Schemata
 import SociableWeaver
-import protocol Catenary.Clause
 import struct Catenary.Schema
+import protocol Catenary.Clause
+import protocol Catenary.Schematic
 
-struct Equals<Value: Encodable & ArgumentValueRepresentable> {
+struct Equals<
+	Model: Schemata.Model,
+	Schematic: Catenary.Schematic,
+	Value: Encodable & ArgumentValueRepresentable
+> {
 	let body: Value
 
 	init?(_ value: Value?) {

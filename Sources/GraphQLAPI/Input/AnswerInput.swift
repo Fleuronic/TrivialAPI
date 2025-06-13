@@ -8,7 +8,6 @@ import struct Catenary.ArgumentList
 import protocol Catenary.Input
 import protocol Catenary.Schematic
 
-@_UncheckedMemberwiseInit(.public)
 public struct AnswerInput<Schematic: Catenary.Schematic> {
 	public let value: Model.Value
 
