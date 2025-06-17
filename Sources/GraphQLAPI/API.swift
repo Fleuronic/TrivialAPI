@@ -86,7 +86,17 @@ private extension Schema {
         for type in repeat each types {
             components.formUnion(
                 type.schema.properties
-                    .map { ($0, [$1.path]) }
+                    .map { keyPath, property in
+                        let path: String
+                        switch property.type {
+                        case let .toMany(type):
+                            path = type.anySchema.name
+                        default:
+                            path = property.path
+                        }
+
+                        return (keyPath, [path])
+                    }
                     .map(Schema.Component.init)
             )
         }
