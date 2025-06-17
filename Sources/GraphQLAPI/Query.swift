@@ -48,19 +48,21 @@ public struct Query<
 	}
 
 	init<
-		Clause1: Catenary.Clause
+		Clause: Catenary.Clause
 	> (
 		name: ((String) -> String)? = nil,
 		fieldsName: String? = nil,
 		count: Int? = nil,
-		_ clause1: Clause1?
-	)  {
+		_ clause: Clause?
+	) where
+        Clause.Model == Fields.Model,
+        Clause.Schematic == Schematic {
 		self.name = name
 		self.fieldsName = fieldsName
 		self.count = count
 
 		var argumentList = ArgumentList()
-		clause1.map { argumentList.append($0) }
+		clause.map { argumentList.append($0) }
 
 		self.argumentList = argumentList
 	}
