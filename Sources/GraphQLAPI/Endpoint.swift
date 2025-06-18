@@ -1,11 +1,8 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import Papyrus
-import Foundation
 import Serialization
-import struct Trivial.Question
 import struct Catenary.Response
-import protocol Catenary.Fields
 
 @API @Mock
 public protocol Endpoint {
