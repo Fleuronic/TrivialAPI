@@ -69,47 +69,26 @@ public struct Query<
 
 	init<
 		Clause1: Catenary.Clause,
-		Clause2: Catenary.Clause
-	> (
-		name: ((String) -> String)? = nil,
-		fieldsName: String? = nil,
-		count: Int? = nil,
-		_ clause1: Clause1?,
-		_ clause2: Clause2?
-	) where
-		Clause1.Model == Fields.Model,
-		Clause2.Model == Fields.Model,
-		Clause1.Schematic == Schematic,
-		Clause2.Schematic == Schematic {
-		self.name = name
-		self.fieldsName = fieldsName
-		self.count = count
-
-		var argumentList = ArgumentList()
-		clause1.map { argumentList.append($0) }
-		clause2.map { argumentList.append($0) }
-
-		self.argumentList = argumentList
-	}
-
-	init<
-		Clause1: Catenary.Clause,
 		Clause2: Catenary.Clause,
-		Clause3: Catenary.Clause
+		Clause3: Catenary.Clause,
+        Clause4: Catenary.Clause
 	> (
 		name: ((String) -> String)? = nil,
 		fieldsName: String? = nil,
 		count: Int? = nil,
 		_ clause1: Clause1?,
 		_ clause2: Clause2?,
-		_ clause3: Clause3?
+		_ clause3: Clause3?,
+        _ clause4: Clause4?
 	) where
 		Clause1.Model == Fields.Model,
 		Clause2.Model == Fields.Model,
 		Clause3.Model == Fields.Model,
+        Clause4.Model == Fields.Model,
 		Clause1.Schematic == Schematic,
 		Clause2.Schematic == Schematic,
-		Clause3.Schematic == Schematic {
+		Clause3.Schematic == Schematic,
+        Clause4.Schematic == Schematic {
 		self.name = name
 		self.fieldsName = fieldsName
 		self.count = count
@@ -118,6 +97,7 @@ public struct Query<
 		clause1.map { argumentList.append($0) }
 		clause2.map { argumentList.append($0) }
 		clause3.map { argumentList.append($0) }
+        clause4.map { argumentList.append($0) }
 
 		self.argumentList = argumentList
 	}

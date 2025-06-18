@@ -1,6 +1,5 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import MemberwiseInit
 import struct Trivial.Answer
 import struct Trivial.Question
 import struct TrivialService.IdentifiedAnswer

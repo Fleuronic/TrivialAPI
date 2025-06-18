@@ -1,4 +1,4 @@
-// Copyright © Fleuronic LLC. All rights reserved.
+// Copyright © Fleuronic LLC. All rights reserved.
 
 import struct Trivial.Question
 import protocol TrivialService.QuestionFields

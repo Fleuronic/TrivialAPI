@@ -14,13 +14,7 @@ extension API: QuestionSpec {
 
     public func fetchQuestion(with id: Question.ID) async -> SingleResult<QuestionSpecifiedFields> {
         await result {
-            let response: Response<QuestionSpecifiedFields> = try await endpoint.run(
-                Query<Self, _>(
-                    Where(\Question.Identified.id, Equals(id))
-                )
-            )
-
-            return try response.fields.first!
+            (try await endpoint.run(Query<Self, _>(Where(\.id, Equals(id)))).fields as [QuestionSpecifiedFields]).first!
         }
     }
 
@@ -29,8 +23,9 @@ extension API: QuestionSpec {
 			try await endpoint.run(
 				Query<Self, _>(
 					Limit(count),
-					Where(\.category.id, Equals(categoryID)),
-					Where(\.value.difficulty, Equals(difficulty))
+					Where(\.value.questionType, Equals(type)),
+                    Where(\.value.difficulty, Equals(difficulty)),
+                    Where(\.category.id, Equals(categoryID))
 				)
 			).fields
 		}

@@ -1,9 +1,4 @@
-//
-//  Question.swift
-//  NativeTTS
-//
-//  Created by Kay, Jordan (He/Him/His) on 3/13/25.
-//
+// Copyright © Fleuronic LLC. All rights reserved.
 
 import Papyrus
 import Schemata
@@ -81,6 +76,7 @@ extension API: Schematic {
 
 // MARK: -
 private extension Schema {
+    // TODO
     init<each T: Model>(_ types: repeat (each T).Type)  {
         var components: Set<Schema.Component> = []
         for type in repeat each types {

@@ -3,7 +3,7 @@
 import SociableWeaver
 import struct Trivial.Question
 
-extension Question.QuestionType: SociableWeaver.ArgumentValueRepresentable {
+extension Question.QuestionType: ArgumentValueRepresentable {
 	// MARK: ArgumentValueRepresentable
 	public var argumentValue: String { encoded }
 }

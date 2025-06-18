@@ -1,5 +1,6 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
+import Catenary
 import struct Trivial.Question
 
 extension Question: Swift.Decodable {

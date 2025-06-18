@@ -23,7 +23,7 @@ extension PapyrusResponse {
 			try validate()
 			return nil
 		} catch {
-			let decoder = JSONDecoder.decoder
+			let decoder = JSONDecoder()
 			return body.flatMap { try? decoder.decode(APIError.self, from: $0) }
 		}
 	}

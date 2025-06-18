@@ -1,9 +1,4 @@
-//
-//  File.swift
-//  Services
-//
-//  Created by Kay, Jordan (He/Him/His) on 4/7/25.
-//
+// Copyright © Fleuronic LLC. All rights reserved.
 
 private import MemberwiseInit
 

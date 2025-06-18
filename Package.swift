@@ -20,7 +20,7 @@ let package = Package(
 		),
 	],
 	dependencies: [
-		.package(path: "../TrivialService"),
+        .package(url: "https://github.com/Fleuronic/TrivialService", branch: "main"),
 		.package(url: "https://github.com/Fleuronic/Catenary", branch: "main"),
 		.package(url: "https://github.com/jordanekay/papyrus", branch: "main")
 	],
