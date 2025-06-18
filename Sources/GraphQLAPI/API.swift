@@ -23,24 +23,6 @@ public struct API<
 }
 
 // MARK: -
-public extension API {
-    func specifyingQuestionFields<Fields>(_: Fields.Type) -> API<
-		Endpoint,
-		Fields,
-		CategorySpecifiedFields
-	> {
-        .init(endpoint: endpoint)
-    }
-
-	func specifyingCategoryFields<Fields>(_: Fields.Type) -> API<
-		Endpoint,
-		QuestionSpecifiedFields,
-		Fields
-	> {
-		.init(endpoint: endpoint)
-	}
-}
-
 public extension API where Endpoint == EndpointAPI {
 	init(apiKey: String) {
 		let url = "https://oratory.hasura.app/v1/graphql"
