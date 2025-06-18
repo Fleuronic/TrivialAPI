@@ -23,6 +23,24 @@ public struct API<
 }
 
 // MARK: -
+public extension API {
+    func specifyingQuestionFields<Fields>(_: Fields.Type) -> API<
+        Endpoint,
+        Fields,
+        CategorySpecifiedFields
+    > {
+        .init(endpoint: endpoint)
+    }
+
+    func specifyingCategoryFields<Fields>(_: Fields.Type) -> API<
+        Endpoint,
+        QuestionSpecifiedFields,
+        Fields
+    > {
+        .init(endpoint: endpoint)
+    }
+}
+
 public extension API where Endpoint == EndpointAPI {
 	init(apiKey: String) {
 		let url = "https://oratory.hasura.app/v1/graphql"
@@ -42,43 +60,19 @@ public extension API where Endpoint == EndpointAPI {
 
 // MARK: -
 extension API: Catenary.API {
+    // MARK: API
 	public typealias APIError = Request.Error
 }
 
 extension API: Schematic {
+    // MARK: Schematic
 	public static var schema: Schema {
-		.init(
-			Question.Identified.self,
-			Category.Identified.self,
-			Answer.Identified.self,
-			[Answer.Identified].self
-		)
+//		.init(
+//			Question.Identified.self,
+//			Category.Identified.self,
+//			[Answer.Identified].self
+//		)
+        fatalError()
 	}
 }
 
-// MARK: -
-private extension Schema {
-    // TODO
-    init<each T: Model>(_ types: repeat (each T).Type)  {
-        var components: Set<Schema.Component> = []
-        for type in repeat each types {
-            components.formUnion(
-                type.schema.properties
-                    .map { keyPath, property in
-                        let path: String
-                        switch property.type {
-                        case let .toMany(type):
-                            path = type.anySchema.name
-                        default:
-                            path = property.path
-                        }
-
-                        return (keyPath, [path])
-                    }
-                    .map(Schema.Component.init)
-            )
-        }
-
-        self.init(components: components)
-    }
-}
