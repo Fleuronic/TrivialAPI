@@ -13,11 +13,13 @@ import protocol Catenary.Fields
 import protocol Catenary.Schematic
 import protocol TrivialService.QuestionFields
 import protocol TrivialService.CategoryFields
+import protocol TrivialService.AnswerFields
 
 public struct API<
 	Endpoint: GraphQLAPI.Endpoint,
-	QuestionSpecifiedFields: QuestionFields & Catenary.Fields<Question.Identified> & ModelProjection,
-	CategorySpecifiedFields: CategoryFields & Catenary.Fields<Category.Identified> & ModelProjection
+    QuestionSpecifiedFields: QuestionFields,
+    CategorySpecifiedFields: CategoryFields,
+    AnswerSpecifiedFields: AnswerFields
 >: @unchecked Sendable {
 	public let endpoint: Endpoint
 }
@@ -27,7 +29,8 @@ public extension API {
     func specifyingQuestionFields<Fields>(_: Fields.Type) -> API<
         Endpoint,
         Fields,
-        CategorySpecifiedFields
+        CategorySpecifiedFields,
+        AnswerSpecifiedFields
     > {
         .init(endpoint: endpoint)
     }
@@ -35,6 +38,16 @@ public extension API {
     func specifyingCategoryFields<Fields>(_: Fields.Type) -> API<
         Endpoint,
         QuestionSpecifiedFields,
+        Fields,
+        AnswerSpecifiedFields
+    > {
+        .init(endpoint: endpoint)
+    }
+
+    func specifyingAnswerFields<Fields>(_: Fields.Type) -> API<
+        Endpoint,
+        QuestionSpecifiedFields,
+        CategorySpecifiedFields,
         Fields
     > {
         .init(endpoint: endpoint)
@@ -59,20 +72,26 @@ public extension API where Endpoint == EndpointAPI {
 //}
 
 // MARK: -
-extension API: Catenary.API {
+extension API: CaesuraAPI {
     // MARK: API
 	public typealias APIError = Request.Error
+
+    // MARK: Storage
+    public typealias StorageError = Self.Error
 }
 
 extension API: Schematic {
     // MARK: Schematic
 	public static var schema: Schema {
-//		.init(
-//			Question.Identified.self,
-//			Category.Identified.self,
-//			[Answer.Identified].self
-//		)
-        fatalError()
+		.init(
+			Question.Identified.self,
+			Category.Identified.self,
+			[Answer.Identified].self
+		)
 	}
-}
 
+    public static var enumValues: [String] {
+        Question.QuestionType.allCases.map(\.encoded) +
+        Question.Difficulty.allCases.map(\.encoded)
+    }
+}
