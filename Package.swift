@@ -13,9 +13,8 @@ let package = Package(
 		.library(
 			name: "TrivialAPI",
 			targets: [
-				"RESTAPI",
 				"GraphQLAPI",
-				"Serialization"
+                "Serialization"
 			]
 		),
 	],
@@ -26,26 +25,17 @@ let package = Package(
 	],
 	targets: [
 		.target(
-			name: "RESTAPI",
-			dependencies: [
-				"Serialization",
-				.product(name: "Papyrus", package: "papyrus")
-			]
-		),
-		.target(
 			name: "GraphQLAPI",
-			dependencies: [
-				"Serialization",
-				.product(name: "Papyrus", package: "papyrus")
-			]
+			dependencies: ["Serialization"]
 		),
-		.target(
-			name: "Serialization",
-			dependencies: [
-				"TrivialService",
-				"Catenary"
-			]
-		)
+        .target(
+            name: "Serialization",
+            dependencies: [
+                "Catenary",
+                "TrivialService",
+                .product(name: "Papyrus", package: "papyrus")
+            ]
+        )
 	],
 	swiftLanguageModes: [.v6]
 )
