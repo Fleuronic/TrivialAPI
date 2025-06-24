@@ -1,25 +1,16 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import Schemata
 import protocol Catenary.Clause
-import protocol Catenary.Schematic
 
-struct Limit<
-	Model: Schemata.Model,
-	Schematic: Catenary.Schematic
-> {
+struct Limit {
 	let body: Int
 
-	init?(_ count: Int?) {
-		guard let count else { return nil }
-		
+	init(_ count: Int) {
 		body = count
 	}
 }
 
 // MARK: -
 extension Limit: Clause {
-	enum CodingKeys: String, CodingKey, CaseIterable {
-		case body = "limit"
-	}
+	static let name = "limit"
 }

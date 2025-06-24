@@ -1,27 +1,23 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import Schemata
+import SociableWeaver
+import PersistDB
 import struct Catenary.ArgumentList
-import protocol Catenary.Input
+import struct Catenary.Schema
 import protocol Catenary.Clause
+import protocol Catenoid.Model
 import protocol Catenary.Schematic
 
-struct Object<
-	Model: Schemata.Model,
-	Schematic: Catenary.Schematic
-> {
-	let body: ArgumentList
+struct Object {
+    let body: [String: any Sendable]
 
-	init?(_ value: (some Input<Schematic>)?) {
-		guard let value else { return nil }
-		
-		body = value.argumentList
-	}
+    init(_ valueSet: ValueSet<some Schemata.Model>) {
+        body = valueSet.dictionary as! [String: any Sendable]
+    }
 }
 
 // MARK: -
 extension Object: Clause {
-	enum CodingKeys: String, CodingKey, CaseIterable {
-		case body = "object"
-	}
+    static let name = "object"
 }
