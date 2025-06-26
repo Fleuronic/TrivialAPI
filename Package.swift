@@ -12,10 +12,7 @@ let package = Package(
 	products: [
 		.library(
 			name: "TrivialAPI",
-			targets: [
-				"GraphQLAPI",
-                "Serialization"
-			]
+			targets: ["TrivialAPI"]
 		),
 	],
 	dependencies: [
@@ -24,11 +21,7 @@ let package = Package(
 	],
 	targets: [
 		.target(
-			name: "GraphQLAPI",
-			dependencies: ["Serialization"]
-		),
-        .target(
-            name: "Serialization",
+			name: "TrivialAPI",
             dependencies: [
                 "Caesura",
                 "TrivialService"
