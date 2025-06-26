@@ -1,5 +1,5 @@
 {
-  "originHash" : "f2eea2af3f17588fefa0a9a0685c089265981d2155726b34af957e5c0c5e225a",
+  "originHash" : "50f11c2d62ddb1620b64e69f7ad2da93f41c04578c4a8893e85b7274ab40c301",
   "pins" : [
     {
       "identity" : "caesura",
@@ -7,7 +7,7 @@
       "location" : "https://github.com/Fleuronic/Caesura",
       "state" : {
         "branch" : "main",
-        "revision" : "57a9a4699be72e994d251b96e96146cde9cf653a"
+        "revision" : "02cd6ba59418d52da80cad15319412c16f2c281b"
       }
     },
     {
@@ -16,7 +16,7 @@
       "location" : "https://github.com/Fleuronic/Catena",
       "state" : {
         "branch" : "main",
-        "revision" : "681be25be987a63d858c6c952d239ed85a5c1b43"
+        "revision" : "4b8f563478ba7ff00ce8014b2ec54a6bdbbfbdfa"
       }
     },
     {
@@ -25,7 +25,7 @@
       "location" : "https://github.com/Fleuronic/Catenary",
       "state" : {
         "branch" : "main",
-        "revision" : "1579207f71c850c5d296cf2bdb9660f18a785453"
+        "revision" : "224c53aee87e9e5ea444d0ed8844fbeed00ed5cc"
       }
     },
     {
@@ -34,7 +34,7 @@
       "location" : "https://github.com/Fleuronic/Catenoid",
       "state" : {
         "branch" : "main",
-        "revision" : "81a13203a8e6f1bb7228ea31bf32726ed5a999e1"
+        "revision" : "59081e754faa4bb0eca489907d5a26d561538cd0"
       }
     },
     {
@@ -52,7 +52,7 @@
       "location" : "https://github.com/jordanekay/Identity",
       "state" : {
         "branch" : "master",
-        "revision" : "8764a54c8e5ef0d14f3dc2ec5c10223ed0411a4d"
+        "revision" : "ff9dfdf4df87ff0d7064d40bdc230c5e55f0bcbf"
       }
     },
     {
@@ -124,7 +124,7 @@
       "location" : "https://github.com/Fleuronic/Trivial",
       "state" : {
         "branch" : "main",
-        "revision" : "a3d8206ccbdb641f745d348446b442be8631617e"
+        "revision" : "be465bff043175d3e8ee4bd73177562d1b2f418e"
       }
     },
     {
@@ -133,7 +133,7 @@
       "location" : "https://github.com/Fleuronic/TrivialService",
       "state" : {
         "branch" : "main",
-        "revision" : "436188c0d3a9de61fb60aed8979b4a21b623eec6"
+        "revision" : "99fd5e38991352dea01d9b5243a73264da6ecc11"
       }
     }
   ],
