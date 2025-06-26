@@ -1,13 +1,22 @@
 {
-  "originHash" : "a31ed9a8e1103d2c46f085f28fd3303be16c655e7c5f31afa9e235adbe4e6d35",
+  "originHash" : "f2eea2af3f17588fefa0a9a0685c089265981d2155726b34af957e5c0c5e225a",
   "pins" : [
+    {
+      "identity" : "caesura",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Caesura",
+      "state" : {
+        "branch" : "main",
+        "revision" : "57a9a4699be72e994d251b96e96146cde9cf653a"
+      }
+    },
     {
       "identity" : "catena",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Fleuronic/Catena",
       "state" : {
         "branch" : "main",
-        "revision" : "663d2e351e8d8ffdd0fc566c79cc46ad5d2db502"
+        "revision" : "681be25be987a63d858c6c952d239ed85a5c1b43"
       }
     },
     {
@@ -16,7 +25,25 @@
       "location" : "https://github.com/Fleuronic/Catenary",
       "state" : {
         "branch" : "main",
-        "revision" : "d3ece2a4f2418a27ce7c895a686de90b94469248"
+        "revision" : "1579207f71c850c5d296cf2bdb9660f18a785453"
+      }
+    },
+    {
+      "identity" : "catenoid",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/Catenoid",
+      "state" : {
+        "branch" : "main",
+        "revision" : "81a13203a8e6f1bb7228ea31bf32726ed5a999e1"
+      }
+    },
+    {
+      "identity" : "differ",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/tonyarnold/Differ",
+      "state" : {
+        "revision" : "5520fda947f1f9777a806389c2ba587219bc0538",
+        "version" : "1.4.6"
       }
     },
     {
@@ -38,12 +65,30 @@
       }
     },
     {
+      "identity" : "persistdb",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jordanekay/PersistDB",
+      "state" : {
+        "branch" : "master",
+        "revision" : "1fcce3a2e8d5ff8dcd52ab60a743bc0fb9f06c78"
+      }
+    },
+    {
+      "identity" : "reactiveswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveCocoa/ReactiveSwift.git",
+      "state" : {
+        "branch" : "swift-concurrency",
+        "revision" : "3d40187c982346352d0adbe6b38e0e3d53fddc95"
+      }
+    },
+    {
       "identity" : "schemata",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jordanekay/Schemata",
       "state" : {
         "branch" : "master",
-        "revision" : "b8722d45a75a755f17907ba6d3765c23e5e46a7a"
+        "revision" : "1c5443b01cd2fb9f25e63197cfe35b96ba9bd2fc"
       }
     },
     {
@@ -79,7 +124,16 @@
       "location" : "https://github.com/Fleuronic/Trivial",
       "state" : {
         "branch" : "main",
-        "revision" : "043cd998fbbb7b5c140f9f45b9c035a9964ad3d9"
+        "revision" : "a3d8206ccbdb641f745d348446b442be8631617e"
+      }
+    },
+    {
+      "identity" : "trivialservice",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Fleuronic/TrivialService",
+      "state" : {
+        "branch" : "main",
+        "revision" : "436188c0d3a9de61fb60aed8979b4a21b623eec6"
       }
     }
   ],

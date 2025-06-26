@@ -20,8 +20,7 @@ let package = Package(
 	],
 	dependencies: [
         .package(url: "https://github.com/Fleuronic/TrivialService", branch: "main"),
-		.package(url: "https://github.com/Fleuronic/Catenary", branch: "main"),
-		.package(url: "https://github.com/jordanekay/papyrus", branch: "main")
+		.package(url: "https://github.com/Fleuronic/Caesura", branch: "main")
 	],
 	targets: [
 		.target(
@@ -31,9 +30,8 @@ let package = Package(
         .target(
             name: "Serialization",
             dependencies: [
-                "Catenary",
-                "TrivialService",
-                .product(name: "Papyrus", package: "papyrus")
+                "Caesura",
+                "TrivialService"
             ]
         )
 	],
