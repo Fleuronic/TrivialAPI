@@ -15,17 +15,11 @@ let package = Package(
 			targets: ["TrivialAPI"]
 		),
 	],
-	dependencies: [
-        .package(url: "https://github.com/Fleuronic/TrivialService", branch: "main"),
-		.package(url: "https://github.com/Fleuronic/Caesura", branch: "main")
-	],
+	dependencies: [.package(url: "https://github.com/Fleuronic/TrivialService", branch: "main")],
 	targets: [
 		.target(
 			name: "TrivialAPI",
-            dependencies: [
-                "Caesura",
-                "TrivialService"
-            ]
+            dependencies: ["TrivialService"]
         )
 	],
 	swiftLanguageModes: [.v6]
