@@ -7,16 +7,18 @@ import struct Trivial.Question
 import struct Trivial.Answer
 import struct Trivial.Category
 import struct Catenary.Schema
+import struct Caesura.EndpointAPI
 import protocol Catena.Fields
-import protocol Catenary.API
 import protocol Catenary.Fields
 import protocol Catenary.Schematic
+import protocol Caesura.API
+import protocol Caesura.Endpoint
 import protocol TrivialService.QuestionFields
 import protocol TrivialService.CategoryFields
 import protocol TrivialService.AnswerFields
 
 public struct API<
-	Endpoint: GraphQLAPI.Endpoint,
+	Endpoint: Caesura.Endpoint,
     QuestionSpecifiedFields: QuestionFields,
     CategorySpecifiedFields: CategoryFields,
     AnswerSpecifiedFields: AnswerFields
@@ -72,7 +74,7 @@ public extension API where Endpoint == EndpointAPI {
 //}
 
 // MARK: -
-extension API: CaesuraAPI {
+extension API: Caesura.API {
     // MARK: API
 	public typealias APIError = Request.Error
 

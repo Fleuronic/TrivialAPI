@@ -2,6 +2,7 @@
 
 import struct Trivial.Category
 import protocol Catena.Scoped
+import protocol Catena.ResultProviding
 import protocol Catenary.Fields
 import protocol Catenoid.Fields
 import protocol TrivialService.CategorySpec
