@@ -1,8 +1,7 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import struct Trivial.Category
-import protocol Catena.Scoped
-import protocol Catena.ResultProviding
+import protocol Catena.Fields
 import protocol Catenary.Fields
 import protocol Catenoid.Fields
 import protocol TrivialService.CategorySpec

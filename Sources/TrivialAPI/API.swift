@@ -94,6 +94,6 @@ extension API: Schematic {
 
 	public static var enumValues: [String] {
 		Question.QuestionType.allCases.map(\.encoded) +
-			Question.Difficulty.allCases.map(\.encoded)
+		Question.Difficulty.allCases.map(\.encoded)
 	}
 }

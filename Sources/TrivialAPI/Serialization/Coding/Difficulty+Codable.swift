@@ -1,6 +1,5 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
-import TrivialService
 import struct Trivial.Question
 
 extension Question.Difficulty: Swift.Decodable {
