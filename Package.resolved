@@ -1,5 +1,5 @@
 {
-  "originHash" : "50f11c2d62ddb1620b64e69f7ad2da93f41c04578c4a8893e85b7274ab40c301",
+  "originHash" : "272a977e3659b89f9339202374a3d63bea82bebcf18130a853ec3327f96fb657",
   "pins" : [
     {
       "identity" : "caesura",
@@ -7,7 +7,7 @@
       "location" : "https://github.com/Fleuronic/Caesura",
       "state" : {
         "branch" : "main",
-        "revision" : "02cd6ba59418d52da80cad15319412c16f2c281b"
+        "revision" : "d1fb2c4160ceed06250c10de34f96d2aa4032c3d"
       }
     },
     {
@@ -16,7 +16,7 @@
       "location" : "https://github.com/Fleuronic/Catena",
       "state" : {
         "branch" : "main",
-        "revision" : "4b8f563478ba7ff00ce8014b2ec54a6bdbbfbdfa"
+        "revision" : "e42054d1cffd0f3c7bc4e64898099ce6534a8bc6"
       }
     },
     {
@@ -34,7 +34,7 @@
       "location" : "https://github.com/Fleuronic/Catenoid",
       "state" : {
         "branch" : "main",
-        "revision" : "59081e754faa4bb0eca489907d5a26d561538cd0"
+        "revision" : "52333639ae306dab59c072c0c1c4a31d6eb6e418"
       }
     },
     {
@@ -124,7 +124,7 @@
       "location" : "https://github.com/Fleuronic/Trivial",
       "state" : {
         "branch" : "main",
-        "revision" : "2f96b964bfc0589c269691eafce9e5b9303c6369"
+        "revision" : "adcaad072c42dccde2a46bf85b495b69c9c74feb"
       }
     },
     {
@@ -133,7 +133,7 @@
       "location" : "https://github.com/Fleuronic/TrivialService",
       "state" : {
         "branch" : "main",
-        "revision" : "99fd5e38991352dea01d9b5243a73264da6ecc11"
+        "revision" : "a7e57fa6f9aa3ff31d5bf50a92ae2c83b8f29547"
       }
     }
   ],
