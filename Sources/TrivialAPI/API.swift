@@ -8,7 +8,6 @@ import struct Trivial.Answer
 import struct Trivial.Category
 import struct Catenary.Schema
 import struct Caesura.EndpointAPI
-import protocol Catena.Fields
 import protocol Catenary.Fields
 import protocol Catenary.Schematic
 import protocol Caesura.API
@@ -19,9 +18,9 @@ import protocol TrivialService.AnswerFields
 
 public struct API<
 	Endpoint: Caesura.Endpoint,
-	QuestionSpecifiedFields: QuestionFields,
-	CategorySpecifiedFields: CategoryFields,
-	AnswerSpecifiedFields: AnswerFields
+	QuestionSpecifiedFields: QuestionFields & Fields,
+	CategorySpecifiedFields: CategoryFields & Fields,
+	AnswerSpecifiedFields: AnswerFields & Fields
 >: @unchecked Sendable {
 	public let endpoint: Endpoint
 }

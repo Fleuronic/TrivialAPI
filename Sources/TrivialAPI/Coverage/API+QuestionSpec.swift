@@ -1,12 +1,11 @@
 // Copyright © Fleuronic LLC. All rights reserved.
 
 import struct Trivial.Question
-import protocol Catena.Fields
-import protocol Catenary.Fields
+import protocol Catena.ResultProviding
 import protocol Catenoid.Fields
 import protocol TrivialService.QuestionSpec
 
-extension API: QuestionSpec where QuestionSpecifiedFields: Catenary.Fields & Catenoid.Fields<Question.Identified> {
+extension API: QuestionSpec where QuestionSpecifiedFields: Fields<Question.Identified> {
 	public typealias QuestionFetch = SingleResult<QuestionSpecifiedFields>
 	public typealias QuestionList = Results<QuestionSpecifiedFields>
 }
