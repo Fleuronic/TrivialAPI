@@ -19,8 +19,8 @@ let package = Package(
 	targets: [
 		.target(
 			name: "TrivialAPI",
-            dependencies: ["TrivialService"]
-        )
+			dependencies: ["TrivialService"]
+		)
 	],
 	swiftLanguageModes: [.v6]
 )

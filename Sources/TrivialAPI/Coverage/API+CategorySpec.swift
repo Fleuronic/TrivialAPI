@@ -8,5 +8,5 @@ import protocol Catenoid.Fields
 import protocol TrivialService.CategorySpec
 
 extension API: CategorySpec where CategorySpecifiedFields: Catenary.Fields & Catenoid.Fields<Category.Identified> {
-    public typealias CategoryList = Results<CategorySpecifiedFields>
+	public typealias CategoryList = Results<CategorySpecifiedFields>
 }

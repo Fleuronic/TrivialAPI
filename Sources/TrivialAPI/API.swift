@@ -19,41 +19,41 @@ import protocol TrivialService.AnswerFields
 
 public struct API<
 	Endpoint: Caesura.Endpoint,
-    QuestionSpecifiedFields: QuestionFields,
-    CategorySpecifiedFields: CategoryFields,
-    AnswerSpecifiedFields: AnswerFields
+	QuestionSpecifiedFields: QuestionFields,
+	CategorySpecifiedFields: CategoryFields,
+	AnswerSpecifiedFields: AnswerFields
 >: @unchecked Sendable {
 	public let endpoint: Endpoint
 }
 
 // MARK: -
 public extension API {
-    func specifyingQuestionFields<Fields>(_: Fields.Type) -> API<
-        Endpoint,
-        Fields,
-        CategorySpecifiedFields,
-        AnswerSpecifiedFields
-    > {
-        .init(endpoint: endpoint)
-    }
+	func specifyingQuestionFields<Fields>(_: Fields.Type) -> API<
+		Endpoint,
+		Fields,
+		CategorySpecifiedFields,
+		AnswerSpecifiedFields
+	> {
+		.init(endpoint: endpoint)
+	}
 
-    func specifyingCategoryFields<Fields>(_: Fields.Type) -> API<
-        Endpoint,
-        QuestionSpecifiedFields,
-        Fields,
-        AnswerSpecifiedFields
-    > {
-        .init(endpoint: endpoint)
-    }
+	func specifyingCategoryFields<Fields>(_: Fields.Type) -> API<
+		Endpoint,
+		QuestionSpecifiedFields,
+		Fields,
+		AnswerSpecifiedFields
+	> {
+		.init(endpoint: endpoint)
+	}
 
-    func specifyingAnswerFields<Fields>(_: Fields.Type) -> API<
-        Endpoint,
-        QuestionSpecifiedFields,
-        CategorySpecifiedFields,
-        Fields
-    > {
-        .init(endpoint: endpoint)
-    }
+	func specifyingAnswerFields<Fields>(_: Fields.Type) -> API<
+		Endpoint,
+		QuestionSpecifiedFields,
+		CategorySpecifiedFields,
+		Fields
+	> {
+		.init(endpoint: endpoint)
+	}
 }
 
 public extension API where Endpoint == EndpointAPI {
@@ -75,15 +75,15 @@ public extension API where Endpoint == EndpointAPI {
 
 // MARK: -
 extension API: Caesura.API {
-    // MARK: API
+	// MARK: API
 	public typealias APIError = Request.Error
 
-    // MARK: Storage
-    public typealias StorageError = Self.Error
+	// MARK: Storage
+	public typealias StorageError = Self.Error
 }
 
 extension API: Schematic {
-    // MARK: Schematic
+	// MARK: Schematic
 	public static var schema: Schema {
 		.init(
 			Question.Identified.self,
@@ -92,8 +92,8 @@ extension API: Schematic {
 		)
 	}
 
-    public static var enumValues: [String] {
-        Question.QuestionType.allCases.map(\.encoded) +
-        Question.Difficulty.allCases.map(\.encoded)
-    }
+	public static var enumValues: [String] {
+		Question.QuestionType.allCases.map(\.encoded) +
+			Question.Difficulty.allCases.map(\.encoded)
+	}
 }

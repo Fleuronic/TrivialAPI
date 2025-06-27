@@ -7,6 +7,6 @@ import protocol Catenoid.Fields
 import protocol TrivialService.QuestionSpec
 
 extension API: QuestionSpec where QuestionSpecifiedFields: Catenary.Fields & Catenoid.Fields<Question.Identified> {
-    public typealias QuestionFetch = SingleResult<QuestionSpecifiedFields>
-    public typealias QuestionList = Results<QuestionSpecifiedFields>
+	public typealias QuestionFetch = SingleResult<QuestionSpecifiedFields>
+	public typealias QuestionList = Results<QuestionSpecifiedFields>
 }
